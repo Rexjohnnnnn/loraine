@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Smile Dentistry - Contact</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f4f8fb; /* Default light mode background */
+            color: #333;
+            box-sizing: border-box; /* Ensures padding and borders are included in the width and height calculations */
+        }
+
+        header {
+            background-color: #007acc; /* Default light mode header color */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            width: 100%;
+            box-sizing: border-box; /* Ensures padding is included in the width */
+        }
+
+        .nav-links {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ffdd57;
+        }
+
+        .menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .menu-btn {
+            background: #007acc;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .menu-btn:hover {
+            background: #005b99;
+        }
+
+        .menu-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 40px;
+            background: #007acc;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .menu-content button {
+            background: none;
+            border: none;
+            padding: 10px 20px;
+            color: #fff;
+            width: 100%;
+            text-align: left;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .menu-content button:hover {
+            background: #005b99;
+        }
+
+        .content {
+            padding: 50px 20px;
+            text-align: center;
+            flex: 1; /* Allows content to grow and fill the remaining space */
+            box-sizing: border-box; /* Ensures padding is included in the height */
+        }
+
+        .content h2 {
+            color: #007acc;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            font-weight: 600;
+        }
+
+        .content p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.5;
+        }
+
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .contact-info p {
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: #007acc;
+            font-size: 20px; /* Adjusted size */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #005b99;
+        }
+
+        footer {
+            background-color: #007acc; /* Same color as header */
+            color: #fff; /* Text color to match the home page */
+            padding: 20px;
+            text-align: center;
+            border-top: 5px solid #005b99;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            box-sizing: border-box; /* Ensures padding is included in the width */
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Flex container to make sure the content takes up full height */
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensures the container takes up at least the full viewport height */
+        }
+
+        /* Dark mode styles */
+        .dark-mode {
+            background-color: #333;
+            color: #f4f8fb;
+        }
+
+        .dark-mode header {
+            background: #222;
+        }
+
+        .dark-mode .contact-info {
+            background: #444;
+            border: 1px solid #555;
+        }
+
+        .dark-mode .social-links a {
+            color: #f4f8fb;
+        }
+
+        .dark-mode footer {
+            background: #222;
+            border-top: 5px solid #444;
+        }
+
+        /* Custom mode styles */
+        .custom-mode {
+            background-color: #e0f7fa;
+            color: #007acc;
+        }
+
+        .custom-mode header {
+            background: #007acc;
+        }
+
+        .custom-mode .contact-info {
+            background: #b3e5fc;
+            border: 1px solid #81d4fa;
+        }
+
+        .custom-mode .social-links a {
+            color: #007acc;
+        }
+
+        .custom-mode footer {
+            background: #007acc;
+            border-top: 5px solid #81d4fa;
+        }
+
+        @media (max-width: 768px) {
+            .content h2 {
+                font-size: 2em;
+            }
+
+            .content p {
+                font-size: 1em;
+            }
+
+            .contact-info {
+                padding: 0 20px;
+            }
+
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .social-links a {
+                font-size: 18px; /* Adjusted size for smaller screens */
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Contact Me and Dr. Galvez</h1>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="menu">
+                <button class="menu-btn">Mode</button>
+                <div class="menu-content">
+                    <button id="light-mode">Light Mode</button>
+                    <button id="dark-mode">Dark Mode</button>
+                    <button id="custom-mode">Custom Mode</button>
+                </div>
+            </div>
+        </header>
+
+        <section class="content">
+            <p>If you have any questions or would like to get in touch, feel free to reach out through our social media channels below. We look forward to hearing from you!</p>
+            
+            <div class="contact-info">
+                <p>Follow us on social media:</p>
+                <div class="social-links">
+                    <!-- Nicole's Social Media Links -->
+                    <a href="https://www.facebook.com/ivxxvxx" target="_blank">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/xocooolee/" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <!-- Rexjohn's Social Media Links -->
+                    <a href="https://www.facebook.com/rexjohn.derayal.71" target="_blank">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/rexjohn.szn/" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Dr. Galvez Dentistry | All Rights Reserved</p>
+        </footer>
+    </div>
+
+    <script>
+        // Function to apply the selected mode
+        function applyMode(mode) {
+            document.body.classList.remove('light-mode', 'dark-mode', 'custom-mode');
+            document.body.classList.add(mode);
+            localStorage.setItem('mode', mode);
+        }
+    
+        // Load saved mode
+        window.onload = function() {
+            const savedMode = localStorage.getItem('mode') || 'light-mode';
+            applyMode(savedMode);
+        };
+    
+        // Event listeners for mode buttons
+        document.querySelector('.menu-btn').addEventListener('click', function() {
+            const menuContent = document.querySelector('.menu-content');
+            menuContent.style.display = menuContent.style.display === 'block' ? 'none' : 'block';
+        });
+    
+        document.getElementById('light-mode').addEventListener('click', function() {
+            applyMode('light-mode');
+        });
+    
+        document.getElementById('dark-mode').addEventListener('click', function() {
+            applyMode('dark-mode');
+        });
+    
+        document.getElementById('custom-mode').addEventListener('click', function() {
+            applyMode('custom-mode');
+        });
+    
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+    
+</body>
+</html>
